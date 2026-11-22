@@ -1,0 +1,17 @@
+
+name: GTA 6 Clips Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  start-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start GTA 6 Agent
+        run: |
+          echo "GTA 6 AI Agent started"
+          echo "Checking automation system..."
+          echo "Ready for next stage"
