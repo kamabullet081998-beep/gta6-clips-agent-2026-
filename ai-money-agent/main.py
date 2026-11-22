@@ -40,7 +40,7 @@ class Lead:
 
 
 def clean(value: str) -> str:
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
 def classify(text: str) -> tuple[str, int]:
@@ -62,7 +62,7 @@ def assess(title: str, summary: str, track_score: int) -> tuple[int, str, str, s
     text = (title + " " + summary).casefold()
     risk_hits = [term for term in RISK_TERMS if term in text]
     risk = "Высокий" if risk_hits else "Низкий"
-    budget_match = re.search(r"(\\d[\\d\\s]{2,}(?:[.,]\\d{1,2})?\\s*(?:₽|руб(?:лей|ля|ль)?))", title + " " + summary, re.I)
+    budget_match = re.search(r"(\d[\d\\s]{2,}(?:[.,]\d{1,2})?\\s*(?:₽|руб(?:лей|ля|ль)?))", title + " " + summary, re.I)
     budget = clean(budget_match.group(1)) if budget_match else "Не указан"
     score = min(100, track_score * 12 + sum(5 for term in GOOD_TERMS if term in text) + (10 if budget != "Не указан" else 0) - (50 if risk_hits else 0))
     reason = "Есть совпадение с нашими услугами"
