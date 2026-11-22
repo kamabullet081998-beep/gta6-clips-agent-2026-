@@ -1,31 +1,22 @@
-# AI Money Agent — starter MVP
+# AI Money Agent — MVP
 
-A free-first assistant for the Russian/CIS freelance market. This starter version collects public RSS/Atom listings that you explicitly configure, ranks them across three service tracks, and prepares draft replies for your review.
+Бесплатный помощник для поиска и подготовки откликов на фриланс-заказы в России и СНГ.
 
-## Service tracks
-1. Text: descriptions, editing, rewriting, posts.
-2. Images: basic image briefs, backgrounds, banners and covers.
-3. Short content: scripts, subtitles and short-video editing briefs.
+## Что умеет первая версия
+- Читает настроенные публичные RSS/Atom-ленты.
+- Сейчас включён один источник: FL.ru — https://www.fl.ru/rss/all.xml
+- Ищет совпадения в трёх направлениях: тексты, обработка изображений, короткий видеоконтент.
+- Убирает дубликаты по ссылке, ставит простой приоритет и готовит черновик отклика.
+- Сохраняет результат в leads.csv.
 
-## Requirements
-- Python 3.10+
-- Internet access for configured feeds
-- No paid API or hosting required for this local starter
+## Запуск на Windows
+1. Установи Python 3.10 или новее.
+2. Открой PowerShell в этой папке.
+3. Выполни: pip install -r requirements.txt
+4. Выполни: python main.py
 
-## Run
-1. Install Python.
-2. In this folder run: `pip install -r requirements.txt`
-3. Copy `.env.example` to `.env`.
-4. Add public RSS/Atom feed URLs you are permitted to access to `FEED_URLS`.
-5. Run: `python main.py`
+## Android
+Можно запускать через Termux с Python: pkg install python; затем pip install -r requirements.txt; затем python main.py.
 
-## Safety and limitations
-- This is a starter tool, not an autonomous money-making system.
-- It does not log into freelance platforms, bypass CAPTCHAs, send applications, contact clients, or accept jobs.
-- Review every listing and draft before contacting anyone. Confirm scope, deadline, price and payment terms directly.
-- Follow each platform's terms and local laws. Do not scrape sites that prohibit it.
-- Never commit passwords, API keys, bot tokens, payment details or identity documents. Keep secrets in local `.env` (ignored by Git).
-- Income is not guaranteed. You need a real client and must deliver the work.
-
-## Current status
-The feed reader works only after you configure allowed feed URLs. No marketplace accounts or payment services are connected.
+## Важно
+Это мониторинг и подготовка черновиков, не автономный заработок. Программа не входит в аккаунты, не обходит защиту сайтов, не отправляет отклики и не принимает заказы. Проверяй каждое объявление вручную, соблюдай правила площадки и никогда не плати за «доступ к заказу», залоги или гарантированное трудоустройство. Доход не гарантирован. Не добавляй пароли, токены и платёжные данные в GitHub.
