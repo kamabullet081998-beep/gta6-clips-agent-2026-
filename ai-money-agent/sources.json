@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "name": "FL.ru — все проекты",
+      "url": "https://www.fl.ru/rss/all.xml",
+      "enabled": true,
+      "terms_note": "Public RSS URL reported as active by an independent feed directory. Verify platform terms and feed behavior before sustained use."
+    }
+  ]
+}
